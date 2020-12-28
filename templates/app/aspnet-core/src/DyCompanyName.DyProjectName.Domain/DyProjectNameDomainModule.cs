@@ -13,6 +13,8 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.IdentityServer;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using Dyabp.LanguageManagement;
+using Volo.Abp.Localization;
 
 namespace DyCompanyName.DyProjectName
 {
@@ -27,7 +29,8 @@ namespace DyCompanyName.DyProjectName
         typeof(AbpPermissionManagementDomainIdentityServerModule),
         typeof(AbpSettingManagementDomainModule),
         typeof(AbpTenantManagementDomainModule),
-        typeof(AbpEmailingModule)
+        typeof(AbpEmailingModule),
+        typeof(LanguageManagementDomainModule)
     )]
     public class DyProjectNameDomainModule : AbpModule
     {
@@ -36,6 +39,13 @@ namespace DyCompanyName.DyProjectName
             Configure<AbpMultiTenancyOptions>(options =>
             {
                 options.IsEnabled = MultiTenancyConsts.IsEnabled;
+            });
+
+            Configure<AbpLocalizationOptions>(options =>
+            {
+                options.Languages.Add(new LanguageInfo("en", "en", "English", "gb"));
+                options.Languages.Add(new LanguageInfo("zh-Hans", "zh-Hans", "简体中文", "cn"));
+                options.Languages.Add(new LanguageInfo("zh-Hant", "zh-Hant", "繁體中文", "hk"));
             });
 
 #if DEBUG

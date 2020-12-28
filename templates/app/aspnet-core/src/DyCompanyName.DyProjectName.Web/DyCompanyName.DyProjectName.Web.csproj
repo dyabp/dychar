@@ -38,6 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\language-management\src\Dyabp.LanguageManagement.Web\Dyabp.LanguageManagement.Web.csproj" />
     <ProjectReference Include="..\DyCompanyName.DyProjectName.Application\DyCompanyName.DyProjectName.Application.csproj" />
     <ProjectReference Include="..\DyCompanyName.DyProjectName.HttpApi\DyCompanyName.DyProjectName.HttpApi.csproj" />
     <ProjectReference Include="..\DyCompanyName.DyProjectName.EntityFrameworkCore.DbMigrations\DyCompanyName.DyProjectName.EntityFrameworkCore.DbMigrations.csproj" />

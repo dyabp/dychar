@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\language-management\src\Dyabp.LanguageManagement.Application\Dyabp.LanguageManagement.Application.csproj" />
     <ProjectReference Include="..\DyCompanyName.DyProjectName.Domain\DyCompanyName.DyProjectName.Domain.csproj" />
     <ProjectReference Include="..\DyCompanyName.DyProjectName.Application.Contracts\DyCompanyName.DyProjectName.Application.Contracts.csproj" />
   </ItemGroup>

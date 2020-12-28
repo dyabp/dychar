@@ -28,4 +28,8 @@
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\modules\language-management\src\Dyabp.LanguageManagement.Domain.Shared\Dyabp.LanguageManagement.Domain.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

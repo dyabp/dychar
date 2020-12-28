@@ -10,6 +10,7 @@ using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using Dyabp.LanguageManagement.EntityFrameworkCore;
 
 namespace DyCompanyName.DyProjectName.EntityFrameworkCore
 {
@@ -23,7 +24,8 @@ namespace DyCompanyName.DyProjectName.EntityFrameworkCore
         typeof(AbpBackgroundJobsEntityFrameworkCoreModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
         typeof(AbpTenantManagementEntityFrameworkCoreModule),
-        typeof(AbpFeatureManagementEntityFrameworkCoreModule)
+        typeof(AbpFeatureManagementEntityFrameworkCoreModule),
+        typeof(LanguageManagementEntityFrameworkCoreModule)
         )]
     public class DyProjectNameEntityFrameworkCoreModule : AbpModule
     {

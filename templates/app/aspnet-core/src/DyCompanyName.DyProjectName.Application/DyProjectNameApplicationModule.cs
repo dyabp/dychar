@@ -5,6 +5,7 @@ using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.TenantManagement;
+using Dyabp.LanguageManagement;
 
 namespace DyCompanyName.DyProjectName
 {
@@ -15,7 +16,8 @@ namespace DyCompanyName.DyProjectName
         typeof(AbpIdentityApplicationModule),
         typeof(AbpPermissionManagementApplicationModule),
         typeof(AbpTenantManagementApplicationModule),
-        typeof(AbpFeatureManagementApplicationModule)
+        typeof(AbpFeatureManagementApplicationModule),
+        typeof(LanguageManagementApplicationModule)
         )]
     public class DyProjectNameApplicationModule : AbpModule
     {

@@ -9,6 +9,7 @@ using Volo.Abp.IdentityServer.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using Dyabp.LanguageManagement.EntityFrameworkCore;
 
 namespace DyCompanyName.DyProjectName.EntityFrameworkCore
 {
@@ -39,6 +40,7 @@ namespace DyCompanyName.DyProjectName.EntityFrameworkCore
             builder.ConfigureIdentityServer();
             builder.ConfigureFeatureManagement();
             builder.ConfigureTenantManagement();
+            builder.ConfigureLanguageManagement();
 
             /* Configure your own tables/entities inside the ConfigureDyProjectName method */
 

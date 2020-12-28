@@ -5,6 +5,7 @@ using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.TenantManagement;
+using Dyabp.LanguageManagement;
 
 namespace DyCompanyName.DyProjectName
 {
@@ -14,7 +15,8 @@ namespace DyCompanyName.DyProjectName
         typeof(AbpIdentityHttpApiClientModule),
         typeof(AbpPermissionManagementHttpApiClientModule),
         typeof(AbpTenantManagementHttpApiClientModule),
-        typeof(AbpFeatureManagementHttpApiClientModule)
+        typeof(AbpFeatureManagementHttpApiClientModule),
+        typeof(LanguageManagementHttpApiClientModule)
     )]
     public class DyProjectNameHttpApiClientModule : AbpModule
     {

@@ -12,6 +12,7 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
+using Dyabp.LanguageManagement;
 
 namespace DyCompanyName.DyProjectName
 {
@@ -23,7 +24,8 @@ namespace DyCompanyName.DyProjectName
         typeof(AbpIdentityServerDomainSharedModule),
         typeof(AbpPermissionManagementDomainSharedModule),
         typeof(AbpSettingManagementDomainSharedModule),
-        typeof(AbpTenantManagementDomainSharedModule)
+        typeof(AbpTenantManagementDomainSharedModule),
+        typeof(LanguageManagementDomainSharedModule)
         )]
     public class DyProjectNameDomainSharedModule : AbpModule
     {

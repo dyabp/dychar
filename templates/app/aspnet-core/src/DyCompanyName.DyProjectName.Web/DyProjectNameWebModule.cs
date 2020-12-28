@@ -36,6 +36,7 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
+using Dyabp.LanguageManagement;
 
 namespace DyCompanyName.DyProjectName.Web
 {
@@ -50,7 +51,8 @@ namespace DyCompanyName.DyProjectName.Web
         typeof(AbpAspNetCoreAuthenticationJwtBearerModule),
         typeof(AbpTenantManagementWebModule),
         typeof(AbpAspNetCoreSerilogModule),
-        typeof(AbpSwashbuckleModule)
+        typeof(AbpSwashbuckleModule),
+        typeof(LanguageManagementWebModule)
         )]
     public class DyProjectNameWebModule : AbpModule
     {
@@ -79,7 +81,7 @@ namespace DyCompanyName.DyProjectName.Web
             ConfigureAuthentication(context, configuration);
             ConfigureAutoMapper();
             ConfigureVirtualFileSystem(hostingEnvironment);
-            ConfigureLocalizationServices();
+            //ConfigureLocalizationServices();
             ConfigureNavigationServices();
             ConfigureAutoApiControllers();
             ConfigureSwaggerServices(context.Services);
