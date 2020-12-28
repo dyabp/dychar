@@ -1,0 +1,3 @@
+[submodule "modules/language-management"]
+	path = modules/language-management
+	url = https://github.com/dyabp/language-management.git
