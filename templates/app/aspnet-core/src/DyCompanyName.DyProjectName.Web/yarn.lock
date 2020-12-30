@@ -82,6 +82,13 @@
     "@abp/jquery" "~4.1.0-rc.2"
     datatables.net "^1.10.21"
 
+"@abp/flag-icon-css@~4.1.0-rc.2":
+  version "4.1.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@abp/flag-icon-css/-/flag-icon-css-4.1.0-rc.2.tgz#7976b77f09d87a418c863d9de2b610c5cbbcaea9"
+  integrity sha512-1r+tRN50nkOXoq7ChNAe2UlQAjCeAU8SGsN2moqC1RFwLCMFYAL3RAmWUjLj3wvNCndbUDgaRNHHz7B9Ls8slg==
+  dependencies:
+    flag-icon-css "^3.5.0"
+
 "@abp/font-awesome@~4.1.0-rc.2":
   version "4.1.0-rc.2"
   resolved "https://registry.yarnpkg.com/@abp/font-awesome/-/font-awesome-4.1.0-rc.2.tgz#ecf490861c09250cf61611ac74cec5ab4392e807"
@@ -890,6 +897,11 @@ fined@^1.0.1:
     object.defaults "^1.1.0"
     object.pick "^1.2.0"
     parse-filepath "^1.0.1"
+
+flag-icon-css@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/flag-icon-css/-/flag-icon-css-3.5.0.tgz#430747d5cb91e60babf85494de99173c16dc7cf2"
+  integrity sha512-pgJnJLrtb0tcDgU1fzGaQXmR8h++nXvILJ+r5SmOXaaL/2pocunQo2a8TAXhjQnBpRLPtZ1KCz/TYpqeNuE2ew==
 
 flagged-respawn@^1.0.0:
   version "1.0.0"
