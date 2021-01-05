@@ -53,8 +53,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{649A3FFA-182
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CCD2960C-23CC-4AB4-B84D-60C7AAA52F4D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "host", "host", "{E400416D-2895-4512-9D17-90681EEC7E0A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dyabp.LanguageManagement.EntityFrameworkCore", "..\..\..\modules\language-management\src\Dyabp.LanguageManagement.EntityFrameworkCore\Dyabp.LanguageManagement.EntityFrameworkCore.csproj", "{0CE86223-D31D-4315-A1F5-87BA3EE1B844}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dyabp.LanguageManagement.MongoDB", "..\..\..\modules\language-management\src\Dyabp.LanguageManagement.MongoDB\Dyabp.LanguageManagement.MongoDB.csproj", "{F1C58097-4C08-4D88-8976-6B3389391481}"
@@ -75,11 +73,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dyabp.LanguageManagement.Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dyabp.LanguageManagement.Web", "..\..\..\modules\language-management\src\Dyabp.LanguageManagement.Web\Dyabp.LanguageManagement.Web.csproj", "{3B7B6317-1B85-4164-8E11-75574F80AE17}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dyabp.LanguageManagement.Web.Unified", "..\..\..\modules\language-management\host\Dyabp.LanguageManagement.Web.Unified\Dyabp.LanguageManagement.Web.Unified.csproj", "{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dyabp.LanguageManagement.Blazor", "..\..\..\modules\language-management\src\Dyabp.LanguageManagement.Blazor\Dyabp.LanguageManagement.Blazor.csproj", "{827FCC18-A22B-4175-82CD-1233F6DEE8FB}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dyabp.LanguageManagement.Host.Shared", "..\..\..\modules\language-management\host\Dyabp.LanguageManagement.Host.Shared\Dyabp.LanguageManagement.Host.Shared.csproj", "{6AD2AF67-6390-4865-A0A5-B494CB3CF376}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "language-management", "language-management", "{102488BD-9031-4932-9ADA-43A3BC265A5D}"
 EndProject
@@ -209,18 +203,10 @@ Global
 		{3B7B6317-1B85-4164-8E11-75574F80AE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B7B6317-1B85-4164-8E11-75574F80AE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B7B6317-1B85-4164-8E11-75574F80AE17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{827FCC18-A22B-4175-82CD-1233F6DEE8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{827FCC18-A22B-4175-82CD-1233F6DEE8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{827FCC18-A22B-4175-82CD-1233F6DEE8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{827FCC18-A22B-4175-82CD-1233F6DEE8FB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6AD2AF67-6390-4865-A0A5-B494CB3CF376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AD2AF67-6390-4865-A0A5-B494CB3CF376}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AD2AF67-6390-4865-A0A5-B494CB3CF376}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AD2AF67-6390-4865-A0A5-B494CB3CF376}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -248,7 +234,6 @@ Global
 		{78040F9E-3501-4A40-82DF-00A597710F35} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{649A3FFA-182F-4E56-9717-E6A9A2BEC545} = {102488BD-9031-4932-9ADA-43A3BC265A5D}
 		{CCD2960C-23CC-4AB4-B84D-60C7AAA52F4D} = {102488BD-9031-4932-9ADA-43A3BC265A5D}
-		{E400416D-2895-4512-9D17-90681EEC7E0A} = {102488BD-9031-4932-9ADA-43A3BC265A5D}
 		{0CE86223-D31D-4315-A1F5-87BA3EE1B844} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{F1C58097-4C08-4D88-8976-6B3389391481} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
 		{077AA5F8-8B61-420C-A6B5-0150A66FDB34} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
@@ -259,9 +244,7 @@ Global
 		{E60895E5-79C4-447D-88B7-85CB5BA336A4} = {CCD2960C-23CC-4AB4-B84D-60C7AAA52F4D}
 		{90CB5DC4-C040-45C7-8900-9688B26405BC} = {CCD2960C-23CC-4AB4-B84D-60C7AAA52F4D}
 		{3B7B6317-1B85-4164-8E11-75574F80AE17} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
-		{3D872C41-E226-45C8-89C1-9D3DBD7C73F2} = {E400416D-2895-4512-9D17-90681EEC7E0A}
 		{827FCC18-A22B-4175-82CD-1233F6DEE8FB} = {649A3FFA-182F-4E56-9717-E6A9A2BEC545}
-		{6AD2AF67-6390-4865-A0A5-B494CB3CF376} = {E400416D-2895-4512-9D17-90681EEC7E0A}
 		{102488BD-9031-4932-9ADA-43A3BC265A5D} = {3A0E795B-5314-495E-B7E0-6FC63CA35FDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
