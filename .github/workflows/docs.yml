@@ -33,10 +33,10 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
 
-      - name: Copy and build
-        run: |
-          yarn copy
-          yarn build
+      # - name: Copy and build
+      #   run: |
+      #     yarn copy
+      #     yarn build
 
       - name: Build documentation site
         run: yarn docs:build
