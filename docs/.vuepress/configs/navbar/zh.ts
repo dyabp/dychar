@@ -3,7 +3,7 @@ import type { NavbarConfig } from '@vuepress/theme-default'
 export const zh: NavbarConfig = [
   {
     text: '指南',
-    link: '/zh/guide/',
+    link: '/guide/',
   },
   {
     text: '参考',
@@ -11,27 +11,30 @@ export const zh: NavbarConfig = [
       {
         text: 'VuePress',
         children: [
-          '/zh/reference/cli.md',
-          '/zh/reference/config.md',
-          '/zh/reference/frontmatter.md',
-          '/zh/reference/components.md',
-          '/zh/reference/plugin-api.md',
-          '/zh/reference/theme-api.md',
+          {
+            text: 'CLI',
+            link: '/reference/cli.html',
+          },
+          '/reference/config.md',
+          '/reference/frontmatter.md',
+          '/reference/components.md',
+          '/reference/plugin-api.md',
+          '/reference/theme-api.md',
         ],
       },
       {
         text: '打包工具',
         children: [
-          '/zh/reference/bundler/webpack.md',
-          '/zh/reference/bundler/vite.md',
+          '/reference/bundler/webpack.md',
+          '/reference/bundler/vite.md',
         ],
       },
       {
         text: '默认主题',
         children: [
-          '/zh/reference/default-theme/config.md',
-          '/zh/reference/default-theme/frontmatter.md',
-          '/zh/reference/default-theme/components.md',
+          '/reference/default-theme/config.md',
+          '/reference/default-theme/frontmatter.md',
+          '/reference/default-theme/components.md',
         ],
       },
     ],
@@ -42,15 +45,15 @@ export const zh: NavbarConfig = [
       {
         text: '深入',
         children: [
-          '/zh/guide/advanced/markdown.md',
-          '/zh/guide/advanced/theme.md',
-          '/zh/guide/advanced/plugin.md',
+          '/guide/advanced/markdown.md',
+          '/guide/advanced/theme.md',
+          '/guide/advanced/plugin.md',
         ],
       },
       {
         text: '其他资源',
         children: [
-          '/zh/contributing.md',
+          '/contributing.md',
           {
             text: '更新日志',
             link:

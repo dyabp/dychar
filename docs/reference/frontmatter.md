@@ -2,49 +2,49 @@
 
 ## lang
 
-- Type: `string`
+- 类型： `string`
 
-- Details:
+- 详情：
 
-  Language for the page.
+  页面的语言。
 
-  This will override the `lang` option in your site config.
+  它将会覆盖站点配置中的 `lang` 配置项
 
-- Also see:
-  - [Config > lang](./config.md#lang)
+- 参考：
+  - [配置 > lang](./config.md#lang)
 
 ## title
 
-- Type: `string`
+- 类型： `string`
 
-- Details:
+- 详情：
 
-  Title for the page.
+  页面的标题。
 
-  If you don't specify `title` in frontmatter, content of the first level-one header (i.e. `# title`) will be used as the title.
+  如果你不在 Frontmatter 中设置 `title` ，那么页面中第一个一级标题（即 `# title`）的内容会被当作标题使用。
 
 ## description
 
-- Type: `string`
+- 类型： `string`
 
-- Details:
+- 详情：
 
-  Description for the page.
+  页面的描述。
 
-  This will override the `description` option in your site config.
+  它将会覆盖站点配置中的 `description` 配置项
 
-- Also see:
-  - [Config > description](./config.md#description)
+- 参考：
+  - [配置 > description](./config.md#description)
 
 ## head
 
-- Type: `HeadConfig[]`
+- 类型： `HeadConfig[]`
 
-- Details:
+- 详情：
 
-  Extra tags in `<head>` tag for the page.
+  页面 `<head>` 标签内添加的额外标签。
 
-- Example:
+- 示例：
 
   ```yaml
   head:
@@ -56,7 +56,7 @@
         href: foobar
   ```
 
-  Rendered as:
+  渲染为：
 
   ```html
   <head>
@@ -65,67 +65,67 @@
   </head>
   ```
 
-- Also see:
-  - [Config > head](./config.md#head)
+- 参考：
+  - [配置 > head](./config.md#head)
 
 ## date
 
-- Type: `string`
+- 类型： `string`
 
-- Details:
+- 详情：
 
-  Created date for the page.
+  页面的创建日期。
 
-  You should specify the date in the form of `yyyy-MM-dd`, or follow the [YAML Timestamp Type](https://yaml.org/type/timestamp.html). 
+  应按照 `yyyy-MM-dd` 的格式来指定日期，或者遵循 [YAML Timestamp Type](https://yaml.org/type/timestamp.html) 。
 
 ## permalink
 
-- Type: `string`
+- 类型： `string`
 
-- Details:
+- 详情：
 
-  Permalink for the page.
+  页面的永久链接。
 
-  This will override the default route path that determined by the file path of the page.
+  它将会覆盖根据文件路径来决定的默认路由路径。
 
-- Also see:
+- 参考：
   - [Frontmatter > permalinkPattern](#permalinkpattern)
-  - [Guide > Page > Routing](../guide/page.md#routing)
+  - [指南 > 页面 > 路由](../guide/page.md#路由)
 
 ## permalinkPattern
 
-- Type: `string`
+- 类型： `string`
 
-- Details:
+- 详情：
 
-  Pattern to generate permalink for the page.
+  为页面生成永久链接的 Pattern 。
 
-  This won't take effect if the `permalink` frontmatter has been set.
+  如果 Frontmatter 中设置了 `permalink` ，那么这个字段则不会生效。
 
-- Usage:
+- 使用：
 
-  |  Pattern  |         Description         |
-  |-----------|-----------------------------|
-  | `:year`   | Year part of created date   |
-  | `:month`  | Month part of created date  |
-  | `:day`    | Day part of created date    |
-  | `:slug`   | Slug of page filename       |
-  | `:raw`    | Raw route path              |
+  |  Pattern  |       描述        |
+  |-----------|-------------------|
+  | `:year`   | 创建日期的 年 部分 |
+  | `:month`  | 创建日期的 月 部分 |
+  | `:day`    | 创建日期的 日 部分 |
+  | `:slug`   | 页面文件名的 Slug  |
+  | `:raw`    | 原始路由路径       |
 
-  The `:year`, `:month` and `:day` patterns are resolved according to the following priority:
+  `:year`, `:month` 和 `:day` Pattern 根据如下优先级进行解析：
 
-  - The `date` frontmatter.
-  - The filename that matches the date pattern `yyyy-MM-dd-foobar.md` or `yyyy-MM-foobar.md`.
-  - The dirname that matches the date pattern `yyyy/MM/dd/foobar.md` or `yyyy/MM/foobar.md`.
-  - Fallback to `1970-01-01`.
+  - Frontmatter 中的 `date` 字段。
+  - 符合 `yyyy-MM-dd-foobar.md` 或 `yyyy-MM-foobar.md` 日期格式的文件名。
+  - 符合 `yyyy/MM/dd/foobar.md` 或 `yyyy/MM/foobar.md` 日期格式的目录名。
+  - 默认值 `1970-01-01` 。
 
-- Example:
+- 示例：
 
-  - Case 1:
+  - 情况 1：
 
-    The page filename is `foo-bar.md`.
+    页面文件名是 `foo-bar.md` 。
 
-    The page frontmatter is:
+    页面 Frontmatter 是：
 
     ```yaml
     ---
@@ -134,13 +134,13 @@
     ---
     ```
 
-    Then the permalink of the page would be `2021/01/03/foo-bar.html`.
+    那么页面的永久链接将会是 `2021/01/03/foo-bar.html` 。
 
-  - Case 2:
+  - 情况 2：
 
-    The page filename is `2021-01-03-bar-baz.md`.
+    页面文件名是 `2021-01-03-bar-baz.md`。
 
-    The page frontmatter is:
+    页面 Frontmatter 是：
 
     ```yaml
     ---
@@ -148,16 +148,16 @@
     ---
     ```
 
-    Then the permalink of the page would be `2021/01/03/bar-baz.html`.
+    那么页面的永久链接将会是 `2021/01/03/bar-baz.html` 。
 
-- Also see:
+- 参考：
   - [Frontmatter > date](#date)
   - [Frontmatter > permalink](#permalink)
 
 ## layout
 
-- Type: `string`
+- 类型： `string`
 
-- Details:
+- 详情：
 
-  Layout for the page.
+  页面的布局。

@@ -1,8 +1,8 @@
-# Built-in Components
+# 内置组件
 
 ## ClientOnly
 
-- Usage:
+- 使用：
 
   ```md
   <ClientOnly>
@@ -10,47 +10,47 @@
   </ClientOnly>
   ```
 
-- Details:
+- 详情：
 
-  This component and its children will only be rendered in client-side. That means, it will not be rendered to HTML during build (SSR).
+  该组件和它的子元素只会在客户端被渲染。也就是说，它不会在构建 (SSR) 过程中被渲染到 HTML 内。
 
-  If a component is trying to access Browser / DOM APIs directly in `setup()`, an error will occur during build because those APIs are unavailable in Node.js environment. In such case, you could do either:
+  如果一个组件在 `setup()` 中直接使用 浏览器 / DOM API ，它会导致构建过程报错，因为这些 API 在 Node.js 的环境中是无法使用的。在这种情况下，你可以选择一种方式：
 
-  - Modify the component to only access Browser / DOM APIs in `onBeforeMount()` or `onMounted()` hook.
-  - Wrap the component with `<ClientOnly>`.
+  - 修改这个组件，只在  `onBeforeMount()` 或 `onMounted()` Hook 中使用 浏览器 / DOM API 。
+  - 使用 `<ClientOnly>` 包裹这个组件。
 
 ## Content
 
 - Props:
   - pagePath
-    - Type: `string`
-    - Required: `false`
+    - 类型： `string`
+    - 是否必须： `false`
 
-- Usage:
+- 使用：
 
   ```md
   <Content page-path="/" />
   <Content page-path="/foo.html" />
   ```
 
-- Details:
+- 详情：
 
-  This component will render the Markdown content of a page.
+  该组件会渲染页面的 Markdown 内容。
 
-  If the `pagePath` prop is not provided, it will render the page of current route path.
+  如果没有传入 `pagePath` Prop ，它会渲染当前路由路径下的页面。
 
-  This component is mainly for developing themes. You won't need it in most cases.
+  该组件主要是为了开发主题时使用。在绝大多数情况下你不会用到它。
 
 ## OutboundLink
 
-- Usage:
+- 使用：
 
   ```md
   <OutboundLink />
   ```
 
-- Details:
+- 详情：
 
-  This component will render an indicator for links to external URLs.
+  该组件会渲染一个标识外部 URL 链接的图标。
 
-  This component is mainly for developing themes. You won't need it in most cases.
+  该组件主要是为了开发主题时使用。在绝大多数情况下你不会用到它。

@@ -1,65 +1,65 @@
 import type { SidebarConfig } from '@vuepress/theme-default'
 
 export const en: SidebarConfig = {
-  '/guide/': [
+  '/en/guide/': [
     {
       isGroup: true,
       text: 'Guide',
       children: [
-        '/guide/README.md',
-        '/guide/getting-started.md',
-        '/guide/configuration.md',
-        '/guide/page.md',
-        '/guide/markdown.md',
-        '/guide/assets.md',
-        '/guide/i18n.md',
-        '/guide/deployment.md',
-        '/guide/theme.md',
-        '/guide/plugin.md',
-        '/guide/bundler.md',
+        '/en/guide/README.md',
+        '/en/guide/getting-started.md',
+        '/en/guide/configuration.md',
+        '/en/guide/page.md',
+        '/en/guide/markdown.md',
+        '/en/guide/assets.md',
+        '/en/guide/i18n.md',
+        '/en/guide/deployment.md',
+        '/en/guide/theme.md',
+        '/en/guide/plugin.md',
+        '/en/guide/bundler.md',
       ],
     },
   ],
-  '/guide/advanced/': [
+  '/en/guide/advanced/': [
     {
       isGroup: true,
       text: 'Advanced',
       children: [
-        '/guide/advanced/markdown.md',
-        '/guide/advanced/theme.md',
-        '/guide/advanced/plugin.md',
+        '/en/guide/advanced/markdown.md',
+        '/en/guide/advanced/theme.md',
+        '/en/guide/advanced/plugin.md',
       ],
     },
   ],
-  '/reference/': [
+  '/en/reference/': [
     {
       isGroup: true,
       text: 'VuePress Reference',
       children: [
-        '/reference/cli.md',
-        '/reference/config.md',
-        '/reference/frontmatter.md',
-        '/reference/components.md',
-        '/reference/plugin-api.md',
-        '/reference/theme-api.md',
+        '/en/reference/cli.md',
+        '/en/reference/config.md',
+        '/en/reference/frontmatter.md',
+        '/en/reference/components.md',
+        '/en/reference/plugin-api.md',
+        '/en/reference/theme-api.md',
       ],
     },
   ],
-  '/reference/bundler/': [
+  '/en/reference/bundler/': [
     {
       isGroup: true,
       text: 'Bundler Reference',
-      children: ['/reference/bundler/webpack.md', '/reference/bundler/vite.md'],
+      children: ['/en/reference/bundler/webpack.md', '/en/reference/bundler/vite.md'],
     },
   ],
-  '/reference/default-theme/': [
+  '/en/reference/default-theme/': [
     {
       isGroup: true,
       text: 'Default Theme Reference',
       children: [
-        '/reference/default-theme/config.md',
-        '/reference/default-theme/frontmatter.md',
-        '/reference/default-theme/components.md',
+        '/en/reference/default-theme/config.md',
+        '/en/reference/default-theme/frontmatter.md',
+        '/en/reference/default-theme/components.md',
       ],
     },
   ],

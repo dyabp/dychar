@@ -1,95 +1,94 @@
-# Config
+# 配置
 
-## Site Config
+## 站点配置
 
 ### base
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `/`
+- 默认值： `/`
 
-- Details:
+- 详情：
 
-  The base URL the site will be deployed at.
+  部署站点的基础路径。
 
-  You will need to set this if you plan to deploy your site under a sub path. It should always start and end with a slash. For example, if you plan to deploy your site to GitHub pages at `https://foo.github.io/bar/`, then you should set `base` to `"/bar/"`.
+  如果你想让你的网站部署到一个子路径下，你将需要设置它。它的值应当总是以斜杠开始，并以斜杠结束。举例来说，如果你想将你的网站部署到 `https://foo.github.io/bar/`，那么 `base` 应该被设置成 `"/bar/"`。
 
-  The `base` is automatically prepended to all the URLs that start with `/` in other options, so you only need to specify it once.
+  `base` 将会作为前缀自动地插入到所有以 `/` 开始的其他选项的链接中，所以你只需要指定一次。
 
-- Also see:
-  - [Guide > Assets > Base Helper](../guide/assets.md#base-helper)
-  - [Guide > Deployment](../guide/deployment.md)
+- 参考：
+  - [指南 > 静态资源 > Base Helper](../guide/assets.md#base-helper)
+  - [指南 > 部署](../guide/deployment.md)
 
 ### lang
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `en-US`
+- 默认值： `en-US`
 
-- Details:
+- 详情：
 
-  Language for the site.
+  站点的语言。
 
-  This will be the `lang` attribute of the `<html>` tag in the rendered HTML.
+  它将会在最终渲染出的 HTML 中作为 `<html>` 标签的 `lang` 属性。
 
-  This can be specified in different locales.
+  它可以设置在不同语言的 locales 中。
 
-- Also see:
-  - [Config > locales](#locales)
-  - [Frontmatter > lang](./frontmatter.md#lang)
+- 参考：
+  - [配置 > locales](#locales)
 
 ### title
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `''`
+- 默认值： `''`
 
-- Details:
+- 详情：
 
-  Title for the site.
+  站点的标题。
 
-  This will be the suffix for all page titles, and displayed in the navbar in the default theme.
+  它将会作为所有页面标题的后缀，并且在默认主题的导航栏中显示。
 
-  This can be specified in different locales.
+  它可以设置在不同语言的 locales 中。
 
-- Also see:
-  - [Config > locales](#locales)
+- 参考：
+  - [配置 > locales](#locales)
 
 ### description
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `''`
+- 默认值： `''`
 
-- Details:
+- 详情：
 
-  Description for the site.
+  站点的描述。
 
-  This will be the `content` attribute of `<meta name="description" />` tag in the rendered HTML, which will be overrode by the `description` field of page frontmatter.
+  它将会在最终渲染出的 HTML 中作为 `<meta name="description" />` 标签的 `content` 属性。它会被每个页面的 Frontmatter 中的 `description` 字段覆盖。
 
-  This can be specified in different locales.
+  它可以设置在不同语言的 locales 中。
 
-- Also see:
-  - [Config > locales](#locales)
+- 参考：
+  - [配置 > locales](#locales)
   - [Frontmatter > description](./frontmatter.md#description)
 
 ### head
 
-- Type: `HeadConfig[]`
+- 类型： `HeadConfig[]`
 
-- Default: `[]`
+- 默认值： `[]`
 
-- Details:
+- 详情：
 
-  Extra tags to inject into the `<head>` tag in the rendered HTML.
+  在最终渲染出的 HTML 的 `<head>` 标签内加入的额外标签。
   
-  You can specify each tag in the form of `[tagName, { attrName: attrValue }, innerHTML?]`.
+  你可以通过 `[tagName, { attrName: attrValue }, innerHTML?]` 的格式来添加标签。
 
-  This can be specified in different locales.
+  它可以设置在不同语言的 locales 中。
 
-- Example:
+- 示例：
 
-  To add a custom favicon:
+  增加一个自定义的 favicon ：
 
   ```js
   module.exports = {
@@ -99,7 +98,7 @@
   }
   ```
 
-  Rendered as：
+  渲染为：
 
   ```html
   <head>
@@ -107,45 +106,45 @@
   </head>
   ```
 
-- Also see:
-  - [Config > locales](#locales)
+- 参考：
+  - [配置 > locales](#locales)
   - [Frontmatter > head](./frontmatter.md#head)
 
 ### locales
 
-- Type: `{ [path: string]: Partial<SiteLocaleData> }`
+- 类型： `{ [path: string]: Partial<SiteLocaleData> }`
 
-- Default: `{}`
+- 默认值： `{}`
 
-- Details:
+- 详情：
 
-  Specify locales for i18n support.
+  多语言支持的各个语言 locales 。
 
-  Acceptable fields:
+  可以使用的字段有：
 
   - [lang](#lang)
   - [title](#title)
   - [description](#description)
   - [head](#head)
 
-- Also see:
-  - [Guide > I18n](../guide/i18n.md)
+- 参考：
+  - [指南 > I18n](../guide/i18n.md)
 
-## Theme Config
+## 主题配置
 
 ### theme
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `'@vuepress/default'`
+- 默认值： `'@vuepress/default'`
 
-- Details:
+- 详情：
 
-  Name or absolute path of theme your want to use.
+  你想要使用的主题的名称或绝对路径。
 
-  This option accepts theme name, theme name shorthand, or absolute path to theme.
+  这个选项可以接收主题名称、主题简称或主题的绝对路径。
 
-- Example:
+- 示例：
 
   ```js
   module.exports = {
@@ -155,409 +154,409 @@
   }
   ```
 
-- Also see:
-  - [Guide > Theme](../guide/theme.md)
+- 参考：
+  - [指南 > 主题](../guide/theme.md)
 
 ### themeConfig
 
-- Type: `ThemeConfig`
+- 类型： `ThemeConfig`
 
-- Default: `{}`
+- 默认值： `{}`
 
-- Details:
+- 详情：
 
-  Provide config options to the used theme. The options will vary depending on the theme you are using.
+  为当前使用的主题提供的配置项。具体的配置项取决于你使用的主题。
 
-- Also see:
-  - [Default Theme > Config](./default-theme/config.md)
+- 参考：
+  - [默认主题 > 配置](./default-theme/config.md)
 
-## Bundler Config
+## 打包工具配置
 
 ### bundler
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `'@vuepress/webpack'`
+- 默认值： `'@vuepress/webpack'`
 
-- Details:
+- 详情：
 
-  Name of bundler your want to use.
+  你想要使用的打包工具的名称。
 
-  Bundler name shorthand is acceptable.
+  可以使用打包工具名称的简称。
 
-- Also see:
-  - [Guide > Bundler](../guide/bundler.md)
+- 参考：
+  - [指南 > 打包工具](../guide/bundler.md)
 
 ### bundlerConfig
 
-- Type: `BundlerConfig`
+- 类型： `BundlerConfig`
 
-- Default: `{}`
+- 默认值： `{}`
 
-- Details:
+- 详情：
 
-  Provide config options to the used bundler. The options will vary depending on the bundler you are using.
+  为当前使用的打包工具提供的配置项。具体的配置项取决于你使用的打包工具。
 
-## Directory Config
+## 目录配置
 
 ### dest
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `` `${sourceDir}/.vuepress/dist` ``
+- 默认值： `` `${sourceDir}/.vuepress/dist` ``
 
-- Details:
+- 详情：
 
-  Specify the output directory for `vuepress build` command.
+  指定 `vuepress build` 命令的输出目录。
 
 ### temp
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `` `${sourceDir}/.vuepress/.temp` ``
+- 默认值： `` `${sourceDir}/.vuepress/.temp` ``
 
-- Details:
+- 详情：
 
-  Specify the directory for temporary files.
+  指定临时文件目录。
 
 ### cache
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `` `${sourceDir}/.vuepress/.cache` ``
+- 默认值： `` `${sourceDir}/.vuepress/.cache` ``
 
-- Details:
+- 详情：
 
-  Specify the directory for cache .
+  指定缓存目录。
 
 ### public
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `` `${sourceDir}/.vuepress/public` ``
+- 默认值： `` `${sourceDir}/.vuepress/public` ``
 
-- Details:
+- 详情：
 
-  Specify the directory for public files.
+  指定 Public 文件目录。
 
-- Also see:
-  - [Guide > Assets > Public Files](../guide/assets.md#public-files)
+- 参考：
+  - [指南 > 静态资源 > Public 文件](../guide/assets.md#public-文件)
 
-## Markdown Config
+## Markdown 配置
 
 ### markdown
 
-- Type: `MarkdownOptions`
+- 类型： `MarkdownOptions`
 
-- Default: `{}`
+- 默认值： `{}`
 
-- Details:
+- 详情：
 
-  Configure VuePress built-in Markdown syntax extensions.
+  对 VuePress 内置的 Markdown 语法扩展进行配置。
 
-- Also see:
-  - [Guide > Markdown > Syntax Extensions](../guide/markdown.md#syntax-extensions)
+- 参考：
+  - [指南 > Markdown > 语法扩展](../guide/markdown.md#语法扩展)
 
 #### markdown.anchor
 
-- Type: `AnchorPluginOptions | false`
+- 类型： `AnchorPluginOptions | false`
 
-- Details:
+- 详情：
 
-  Options for [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor).
+  [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) 的配置项。
 
-  Set to `false` to disable this plugin.
+  设置为 `false` 可以禁用该插件。
 
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Header Anchors](../guide/markdown.md#header-anchors)
+- 参考：
+  - [指南 > Markdown > 语法扩展 > 标题锚点](../guide/markdown.md#标题锚点)
 
 #### markdown.assets
 
-- Type: `AssetsPluginOptions | false`
+- 类型： `AssetsPluginOptions | false`
 
-- Details:
+- 详情：
 
-  Options for VuePress built-in markdown-it assets plugin.
+  VuePress 内置的 markdown-it assets 插件的配置项。
 
-  Set to `false` to disable this plugin.
+  设置为 `false` 可以禁用该插件。
 
 :::danger
-You should not configure it unless you understand what it is for.
+除非你了解它的用途，否则你不应该设置该配置项。
 :::
 
 #### markdown.code
 
-- Type: `CodePluginOptions | false`
+- 类型： `CodePluginOptions | false`
 
-- Details:
+- 详情：
 
-  Options for VuePress built-in markdown-it code plugin.
+  VuePress 内置的 markdown-it code 插件的配置项。
 
-  Set to `false` to disable this plugin.
+  设置为 `false` 可以禁用该插件。
 
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Code Blocks](../guide/markdown.md#code-blocks)
+- 参考：
+  - [指南 > Markdown > 语法扩展 > 代码块](../guide/markdown.md#代码块)
 
 ##### markdown.code.highlight
 
-- Type: `boolean`
+- 类型： `boolean`
 
-- Default: `true`
+- 默认值： `true`
 
-- Details:
+- 详情：
 
-  Enable code syntax highlighting or not.
+  是否启用代码块语法高亮。
 
-  You can disable it if you want to implement client side highlighting by yourself. For example, [Prismjs](https://prismjs.com/) or [highlight.js](https://highlightjs.org/).
+  如果你想在客户端进行语法高翔，你可以禁用该配置项。比如使用 [Prismjs](https://prismjs.com/) 或 [highlight.js](https://highlightjs.org/) 。
 
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Code Blocks > Syntax Highlighting](../guide/markdown.md#syntax-highlighting)
+- 参考：
+  - [指南 > Markdown > 语法扩展 > 代码块 > 语法高亮](../guide/markdown.md#语法高亮)
 
 ##### markdown.code.highlightLines
 
-- Type: `boolean`
+- 类型： `boolean`
 
-- Default: `true`
+- 默认值： `true`
 
-- Details:
+- 详情：
 
-  Enable code line highlighting or not.
+  是否启用代码块行高亮。
 
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Code Blocks > Line Highlighting](../guide/markdown.md#line-highlighting)
+- 参考：
+  - [指南 > Markdown > 语法扩展 > 代码块 > 行高亮](../guide/markdown.md#行高亮)
 
 ##### markdown.code.lineNumbers
 
-- Type: `boolean`
+- 类型： `boolean`
 
-- Default: `true`
+- 默认值： `true`
 
-- Details:
+- 详情：
 
-  Enable code line numbers or not.
+  是否启用代码块行号。
 
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Code Blocks > Line Numbers](../guide/markdown.md#line-numbers)
+- 参考：
+  - [指南 > Markdown > 语法扩展 > 代码块 > 行号](../guide/markdown.md#行号)
 
 ##### markdown.code.preWrapper
 
-- Type: `boolean`
+- 类型： `boolean`
 
-- Default: `true`
+- 默认值： `true`
 
-- Details:
+- 详情：
 
-  Enable the extra wrapper of the `<pre>` tag or not.
+  是否在 `<pre>` 标签外额外包裹一层。
 
-  The wrapper is required by the `highlightLines` and `lineNumbers`. That means, if you disable `preWrapper`, the line highlighting and line numbers will also be disabled.
+  `highlightLines` 和 `lineNumbers` 依赖于这个额外的包裹层。这换句话说，如果你禁用了 `preWrapper` ，那么行高亮和行号也会被同时禁用。
 
-  You can disable it if you want to implement them in client side. For example, [Prismjs Line Highlight](https://prismjs.com/plugins/line-highlight/) or [Prismjs Line Numbers](https://prismjs.com/plugins/line-numbers/).
+  如果你想要在客户端来实现这些功能时，可以禁用该配置项。比如使用 [Prismjs Line Highlight](https://prismjs.com/plugins/line-highlight/) 或者 [Prismjs Line Numbers](https://prismjs.com/plugins/line-numbers/)。
 
 ##### markdown.code.vPre
 
-- Type: `boolean`
+- 类型： `boolean`
 
-- Default: `true`
+- 默认值： `true`
 
-- Details:
+- 详情：
 
-  Enable the `v-pre` directive on `<pre>` tag or not.
+  是否在 `<pre>` 标签上添加 `v-pre` 指令。
 
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Code Blocks > Wrap with v-pre](../guide/markdown.md#wrap-with-v-pre)
+- 参考：
+  - [指南 > Markdown > 语法扩展 > 代码块 > 添加 v-pre](../guide/markdown.md#添加-v-pre)
 
 #### markdown.customComponent
 
-- Type: `undefined | false`
+- 类型： `undefined | false`
 
-- Details:
+- 详情：
 
-  Options for VuePress built-in markdown-it custom-component plugin.
+  VuePress 内置的 markdown-it custom-component 插件的配置项。
 
-  Set to `false` to disable this plugin.
+  设置为 `false` 可以禁用该插件。
 
 :::danger
-You should not configure it unless you understand what it is for.
+除非你了解它的用途，否则你不应该设置该配置项。
 :::
 
 #### markdown.emoji
 
-- Type: `EmojiPluginOptions | false`
+- 类型： `EmojiPluginOptions | false`
 
-- Details:
+- 详情：
 
-  Options for [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji).
+  [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) 的配置项。
 
-  Set to `false` to disable this plugin.
+  设置为 `false` 可以禁用该插件。
 
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Emoji](../guide/markdown.md#emoji)
+- 参考：
+  - [指南 > Markdown > 语法扩展 > Emoji](../guide/markdown.md#emoji)
 
 #### markdown.extractHeaders
 
-- Type: `ExtractHeadersPluginOptions | false`
+- 类型： `ExtractHeadersPluginOptions | false`
 
-- Details:
+- 详情：
 
-  Options for VuePress built-in markdown-it extract-headers plugin.
+  VuePress 内置的 markdown-it extract-headers 插件的配置项。
 
-  It will extract page headers to page data, which will be used for generating sidebar, table of contents, etc. For example, the sidebar of current page is auto generated from the headers that extracted by this plugin.
+  它将会把页面的标题提取到 Page Data 中，可以用于生成侧边栏、目录等。比如当前页面的侧边栏，就是由这个插件提取出的标题来自动生成的。
 
-  Set to `false` to disable this plugin.
+  设置为 `false` 可以禁用该插件。
 
 #### markdown.hoistTags
 
-- Type: `HoistTagsPluginOptions | false`
+- 类型： `HoistTagsPluginOptions | false`
 
-- Details:
+- 详情：
 
-  Options for VuePress built-in markdown-it hoist-tags plugin.
+  VuePress 内置的 markdown-it hoist-tags 插件的配置项。
 
-  It will hoist specific HTML tags in your Markdown to the top-level of SFC. By default, only `<script>` and `<style>` tags will be hoisted. You can set this option to support SFC custom blocks in Markdown.
+  它将会把你的 Markdown 中特定的 HTML 标签提升到 SFC 的顶层。默认情况下，只有 `<script>` 和 `<style>` 标签会被提升。你可以通过这个配置项，在 Markdown 中使用 SFC 自定义块。
 
-  Set to `false` to disable this plugin.
+  设置为 `false` 可以禁用该插件。
 
-- Also see:
-  - [Advanced > Markdown and Vue SFC](../guide/advanced/markdown.md)
+- 参考：
+  - [深入 > Markdown 与 Vue SFC](../guide/advanced/markdown.md)
 
 #### markdown.links
 
-- Type: `LinksPluginOptions | false`
+- 类型： `LinksPluginOptions | false`
 
-- Details:
+- 详情：
 
-  Options for VuePress built-in markdown-it links plugin.
+  VuePress 内置的 markdown-it 链接插件的配置项。
 
-  It will convert internal links to `<RouterLink>`, and add extra attributes to external links.
+  它将会把站内链接转换为 `<RouterLink>` ，并且会在站外链接上添加额外的属性。
 
-  Set to `false` to disable this plugin.
+  设置为 `false` 可以禁用该插件。
 
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Links](../guide/markdown.md#links)
+- 参考：
+  - [指南 > Markdown > 语法扩展 > 链接](../guide/markdown.md#链接)
 
 #### markdown.toc
 
-- Type: `TocPluginOptions | false`
+- 类型： `TocPluginOptions | false`
 
-- Details:
+- 详情：
 
-  Options for VuePress built-in markdown-it table-of-contents plugin.
+  VuePress 内置的 markdown-it 目录插件的配置项。
 
-  Set to `false` to disable this plugin.
+  设置为 `false` 可以禁用该插件。
 
-- Also see:
-  - [Guide > Markdown > Syntax Extensions > Table of Contents](../guide/markdown.md#table-of-contents)
+- 参考：
+  - [指南 > Markdown > 语法扩展 > 目录](../guide/markdown.md#目录)
 
-## Development Config
+## 开发配置项
 
 ### debug
 
-- Type: `boolean`
+- 类型： `boolean`
 
-- Default: `false`
+- 默认值： `false`
 
-- Details:
+- 详情：
 
-  Enable debug mode or not.
+  是否启用 Debug 模式。
 
-  This would be helpful for developers. Also, we are using [debug](https://github.com/visionmedia/debug) package for debug logging, which can be enabled via `DEBUG=vuepress*` environment variable.
+  该配置项主要提供给开发者使用。同时，我们使用了 [debug](https://github.com/visionmedia/debug) 模块打印 Debug 日志，可以通过 `DEBUG=vuepress*` 环境变量来启用。
 
 ### host
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `'0.0.0.0'`
+- 默认值： `'0.0.0.0'`
 
-- Details:
+- 详情：
 
-  Specify the host to use for the dev server.
+  指定开发服务器的主机名。
 
 ### port
 
-- Type: `number`
+- 类型： `number`
 
-- Default: `8080`
+- 默认值： `8080`
 
-- Details:
+- 详情：
 
-  Specify the port to use for the dev server.
+  指定开发服务器的端口号。
 
 ### open
 
-- Type: `boolean`
+- 类型： `boolean`
 
-- Default: `false`
+- 默认值： `false`
 
-- Details:
+- 详情：
 
-  Whether to open the browser after dev-server had been started.
+  是否在开发服务器启动后打开浏览器。
 
 ### evergreen
 
-- Type: `boolean`
+- 类型： `boolean`
 
-- Default: `true`
+- 默认值： `true`
 
-- Details:
+- 详情：
 
-  Set to `true` if you are only targeting evergreen browsers. This will disable some transpilation and polyfills, and result in faster builds and smaller files.
+  如果你的对象只有那些 “常青树” 浏览器，你可以将其设置成 `true` 。这将会禁用一些转译过程和 Polyfills ，带来更快的构建速度和更小的文件体积。
 
 ### pagePatterns
 
-- Type: `string[]`
+- 类型： `string[]`
 
-- Default: `['**/*.md', '!.vuepress', '!node_modules']`
+- 默认值： `['**/*.md', '!.vuepress', '!node_modules']`
 
-- Details:
+- 详情：
 
-  Specify the patterns of files you want to be resolved as pages. The patterns are relative to the source directory.
+  指定页面文件的 Patterns 。这些 Patterns 是相对于 Source 目录的。
 
 ### templateDev
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `'@vuepress/client/templates/index.dev.html'`
+- 默认值： `'@vuepress/client/templates/index.dev.html'`
 
-- Details:
+- 详情：
 
-  Specify the HTML template to be used for dev.
+  指定开发时使用的 HTML 模板。
 
 ### templateSSR
 
-- Type: `string`
+- 类型： `string`
 
-- Default: `'@vuepress/client/templates/index.ssr.html'`
+- 默认值： `'@vuepress/client/templates/index.ssr.html'`
 
-- Details:
+- 详情：
 
-  Specify the HTML template to be used for build (SSR).
+  指定构建时 (SSR) 使用的 HTML 模板。
 
 ### shouldPreload
 
-- Type: `((file: string, type: string) => boolean)) | boolean`
+- 类型： `((file: string, type: string) => boolean)) | boolean`
 
-- Default: `true`
+- 默认值： `true`
 
-- Details:
+- 详情：
 
-  A function to control what files should have `<link rel="preload">` resource hints generated. Set to `true` or `false` to enable or disable totally.
+  一个函数，用来控制哪些文件是需要生成对应的 `<link rel="preload">` 标签的。设置为 `true` 或者 `false` 来完全启用或禁用它。 
 
-  By default, only those files that are required by current page will be preloaded. So you can keep it `true` in most cases.
+  默认情况下，只有当前页面所需的文件会被预加载。所以在绝大部分情况下，你只需要使用 `true` 就可以了。
 
 ### shouldPrefetch
 
-- Type: `((file: string, type: string) => boolean)) | boolean`
+- 类型： `((file: string, type: string) => boolean)) | boolean`
 
-- Default: `false`
+- 默认值： `false`
 
-- Details:
+- 详情：
 
-  A function to control what files should have `<link rel="prefetch">` resource hints generated. Set to `true` or `false` to enable or disable for all files.
+  一个函数，用来控制哪些文件是需要生成对应的 `<link rel="prefetch">` 标签的。设置为 `true` 或者 `false` 来完全启用或禁用它。 
 
-  If you set it to `true`, all files that required by other pages will be prefetched. This is good for small sites, which will speed up the navigation, but it might not be a good idea if you have lots of pages in your site.
+  如果你将它设置为 `true` ，所有其它页面所需的文件都会被预拉取。这对于小型站点来说是十分有帮助的，因为它会大大提升页面切换的速度。但是在你的网站有很多页面时不建议你这么做。
 
-## Plugin API
+## 插件 API
 
-User config file also works as a VuePress plugin, so all of the Plugin APIs are available except the `name` and `multiple` options.
+用户配置文件同样可以作为一个 VuePress 插件，所以除了 `name` 和 `multiple` 配置项以外的所有插件 API 都可以在配置文件中使用。
 
-Please check out [Plugin API Reference](./plugin-api.md) for a full list of Plugin APIs.
+前往 [插件 API 参考](./plugin-api.md) 查看所有插件 API 。

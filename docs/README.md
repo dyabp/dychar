@@ -1,53 +1,53 @@
 ---
 home: true
-title: Home
+title: 首页
 heroImage: /hero.png
-actionText: Get Started →
-actionLink: /guide/getting-started.html
+actionText: 快速上手 →
+actionLink: /zh/guide/getting-started.html
 features:
-  - title: Simplicity First
-    details: Minimal setup with markdown-centered project structure helps you focus on writing.
-  - title: Vue-Powered
-    details: Enjoy the dev experience of Vue, use Vue components in markdown, and develop custom themes with Vue.
-  - title: Performant
-    details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
+  - title: 简洁至上
+    details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
+  - title: Vue 驱动
+    details: 享受 Vue 的开发体验，可以在 Markdown 中使用 Vue 组件，又可以使用 Vue 来开发自定义主题。
+  - title: 高性能
+    details: VuePress 会为每个页面预渲染生成静态的 HTML，同时，每个页面被加载的时候，将作为 SPA 运行。
 footer: MIT Licensed | Copyright © 2018-present VuePress
 ---
 
-### As Easy as 1, 2, 3
+### 像数 1, 2, 3 一样容易
 
 <CodeGroup>
   <CodeGroupItem title="YARN" active>
 
 ```bash
-# install in your project
+# 在你的项目中安装
 yarn add -D vuepress@next
 
-# create a markdown file
+# 新建一个 markdown 文件
 echo '# Hello VuePress' > README.md
 
-# start writing
+# 开始写作
 yarn vuepress dev
 
-# build to static files
+# 构建静态文件
 yarn vuepress build
 ```
 
   </CodeGroupItem>
 
   <CodeGroupItem title="NPM">
-  
+
 ```bash
-# install in your project
+# 在你的项目中安装
 npm install -D vuepress@next
 
-# create a markdown file
+# 新建一个 markdown 文件
 echo '# Hello VuePress' > README.md
 
-# start writing
+# 开始写作
 npx vuepress dev
 
-# build to static files
+# 构建静态文件
 npx vuepress build
 ```
 

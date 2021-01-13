@@ -1,16 +1,16 @@
-# Theme
+# 主题
 
-VuePress theme can provide layouts, styles and many other features for you, helping you to focus on writing Markdown content.
+VuePress 主题为你提供了布局、样式和其他功能，帮助你专注于 Markdown 内容的写作。
 
-VuePress has a default theme out of the box, which is applied to our documentation site you are currently browsing. The default theme provides basic but useful features for documentation site, you can check out [Default Theme Config Reference](../reference/default-theme/config.md) for a full list of config.
+VuePress 有一个开箱即用的默认主题，正使用在你当前正在浏览的文档网站上。默认主题为文档网站提供了基础且实用的功能，你可以前往 [默认主题配置参考](../reference/default-theme/config.md) 获取全部的配置列表。
 
-However, you might think it is not good enough. Or, you want to build a different type of site, for example, a blog, instead of a documentation. Then, you can try to [use a community theme](#community-theme) or [create a local theme](#local-theme).
+然而，你可能觉得默认主题不够出色。或者你想要搭建一个其他类型的网站而不是文档，比如博客。此时，你可以尝试 [使用社区主题](#社区主题) 或者 [创建本地主题](#本地主题)。
 
-## Community Theme
+## 社区主题
 
-Community users have created lots of theme and published them to [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme). You should check the theme's own documentation for detailed guide.
+社区用户创建了很多主题，并将它们发布到了 [NPM](https://www.npmjs.com/search?q=keywords:vuepress-theme) 上。查看主题本身的文档可以获取更详细的指引。
 
-In general, you need to specify the name of the theme to use in [theme](../reference/config.md#theme) option:
+一般而言，你需要在 [theme](../reference/config.md#theme) 配置项中设置你要使用的主题名称：
 
 ```js
 module.exports = {
@@ -18,19 +18,19 @@ module.exports = {
 }
 ```
 
-You can use either theme name or its shorthand:
+你可以使用主题名称或者它的简称：
 
-|        Theme Name         |      Shorthand      |
+|          主题名称          |         简称         |
 |---------------------------|---------------------|
 | `vuepress-theme-foo`      | `foo`               |
 | `@org/vuepress-theme-bar` | `@org/bar`          |
 | `@vuepress/theme-default` | `@vuepress/default` |
 
-## Local Theme
+## 本地主题
 
-If you want to use your own custom theme but don't want to publish it, you can create a local theme.
+如果你想要使用自己的自定义主题，但是又不想发布它，你可以创建一个本地主题。
 
-First, create the local theme directory, typically `.vuepress/theme` :
+首先，创建本地主题目录，一般是 `.vuepress/theme` ：
 
 ```
 └─ docs
@@ -41,7 +41,7 @@ First, create the local theme directory, typically `.vuepress/theme` :
    └─ README.md
 ```
 
-Then, set the absolute path of the theme directory to use it:
+然后，设置主题目录的绝对路径来使用它：
 
 ```js
 module.exports = {
@@ -49,4 +49,4 @@ module.exports = {
 }
 ```
 
-Next, refer to [Advanced > Writing a Theme](./advanced/theme.md) for how to write your own theme.
+接下来，前往 [深入 > 开发主题](./advanced/theme.md) 学习如何开发你自己的主题。

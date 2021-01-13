@@ -1,3 +1,3 @@
-# Theme API
+# 主题 API
 
 > TODO

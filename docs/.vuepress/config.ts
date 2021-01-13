@@ -11,15 +11,15 @@ const config: UserConfig<DefaultThemeOptions> = {
 
   // site-level locales config
   locales: {
-    '/': {
-      lang: 'en-US',
-      title: 'DyAbp',
-      description: 'Vue-powered Static Site Generator',
-    },
-    '/zh/': {
+    '/': {   
       lang: 'zh-CN',
       title: 'DyAbp',
       description: 'Vue 驱动的静态网站生成器',
+    },
+    '/en/': {
+      lang: 'en-US',
+      title: 'DyAbp',
+      description: 'Vue-powered Static Site Generator',
     },
   },
 
@@ -39,7 +39,7 @@ const config: UserConfig<DefaultThemeOptions> = {
        * As the default locale of @vuepress/theme-default is English,
        * we don't need to set all of the locale fields
        */
-      '/': {
+      '/en/': {
         // navbar
         navbar: navbar.en,
 
@@ -53,7 +53,7 @@ const config: UserConfig<DefaultThemeOptions> = {
       /**
        * Chinese locale config
        */
-      '/zh/': {
+      '/': {
         // navbar
         navbar: navbar.zh,
         selectLanguageName: '简体中文',

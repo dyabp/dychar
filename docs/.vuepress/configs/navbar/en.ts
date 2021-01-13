@@ -3,7 +3,7 @@ import type { NavbarConfig } from '@vuepress/theme-default'
 export const en: NavbarConfig = [
   {
     text: 'Guide',
-    link: '/guide/',
+    link: '/en/guide/',
   },
   {
     text: 'Reference',
@@ -11,30 +11,27 @@ export const en: NavbarConfig = [
       {
         text: 'VuePress',
         children: [
-          {
-            text: 'CLI',
-            link: '/reference/cli.html',
-          },
-          '/reference/config.md',
-          '/reference/frontmatter.md',
-          '/reference/components.md',
-          '/reference/plugin-api.md',
-          '/reference/theme-api.md',
+          '/en/reference/cli.md',
+          '/en/reference/config.md',
+          '/en/reference/frontmatter.md',
+          '/en/reference/components.md',
+          '/en/reference/plugin-api.md',
+          '/en/reference/theme-api.md',
         ],
       },
       {
         text: 'Bundler',
         children: [
-          '/reference/bundler/webpack.md',
-          '/reference/bundler/vite.md',
+          '/en/reference/bundler/webpack.md',
+          '/en/reference/bundler/vite.md',
         ],
       },
       {
         text: 'Default Theme',
         children: [
-          '/reference/default-theme/config.md',
-          '/reference/default-theme/frontmatter.md',
-          '/reference/default-theme/components.md',
+          '/en/reference/default-theme/config.md',
+          '/en/reference/default-theme/frontmatter.md',
+          '/en/reference/default-theme/components.md',
         ],
       },
     ],
@@ -45,15 +42,15 @@ export const en: NavbarConfig = [
       {
         text: 'Advanced',
         children: [
-          '/guide/advanced/markdown.md',
-          '/guide/advanced/theme.md',
-          '/guide/advanced/plugin.md',
+          '/en/guide/advanced/markdown.md',
+          '/en/guide/advanced/theme.md',
+          '/en/guide/advanced/plugin.md',
         ],
       },
       {
         text: 'Resources',
         children: [
-          '/contributing.md',
+          '/en/contributing.md',
           {
             text: 'Changelog',
             link:

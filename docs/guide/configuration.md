@@ -1,8 +1,8 @@
-# Configuration
+# 配置
 
-## Config File
+## 配置文件
 
-Without any configuration, the VuePress site is pretty minimal. To customize your site, let’s first create a `.vuepress` directory inside your docs directory. This is where all VuePress-specific files will be placed. Your project structure is probably like this:
+如果没有任何配置，你的 VuePress 站点仅有一些最基础的功能。为了更好地自定义你的网站，让我们首先在你的文档目录下创建一个 `.vuepress` 目录，所有 VuePress 相关的文件都将会被放在这里。你的项目结构可能是这样：
 
 ```
 ├─ docs
@@ -13,16 +13,16 @@ Without any configuration, the VuePress site is pretty minimal. To customize you
 └─ package.json
 ```
 
-The essential file for configuring a VuePress site is `.vuepress/config.js`, which should export a JavaScript object. If you are using TypeScript, you can use `.vuepress/config.ts` instead to get better types hint for VuePress Config.
+VuePress 站点必要的配置文件是 `.vuepress/config.js`，它应该导出一个 JavaScript 对象。如果你使用 TypeScript ，你可以将其替换为 `.vuepress/config.ts` ，以便让 VuePress 配置得到更好的类型提示。
 
 <CodeGroup>
   <CodeGroupItem title="JS" active>
 
 ```js
 module.exports = {
-  lang: 'en-US',
-  title: 'Hello, VuePress!',
-  description: 'This is my first VuePress site',
+  lang: 'zh-CN',
+  title: '你好， VuePress ！',
+  description: '这是我的第一个 VuePress 站点',
 
   themeConfig: {
     logo: 'https://vuejs.org/images/logo.png',
@@ -38,9 +38,9 @@ module.exports = {
 import type { UserConfig, DefaultThemeOptions } from 'vuepress'
 
 const config: UserConfig<DefaultThemeOptions> = {
-  lang: 'en-US',
-  title: 'Hello VuePress',
-  description: 'Just playing around',
+  lang: 'zh-CN',
+  title: '你好， VuePress ！',
+  description: '这是我的第一个 VuePress 站点',
 
   themeConfig: {
     logo: 'https://vuejs.org/images/logo.png',
@@ -54,31 +54,31 @@ export = config
 </CodeGroup>
 
 :::tip
-We will refer the config object as **VuePress Config**.
+我们接下来会把这个配置对象称为 **VuePress 配置**.
 :::
 
-## Config Scopes
+## 配置作用域
 
-You may have noticed that there is a `themeConfig` option in VuePress Config.
+你可能已经注意到了，在 VuePress 配置中有一项 `themeConfig` 配置项。
 
-Options outside `themeConfig` are **Site Config**, while options inside `themeConfig` are **Theme Config**.
+在 `themeConfig` 外部的配置项属于 **站点配置** ，而在 `themeConfig` 内部的配置项则属于 **主题配置**。
 
-### Site Config
+### 站点配置
 
-Site config means that, no matter what theme you are using, these configurations are always valid.
+站点配置的意思是，无论你使用什么主题，这些配置项都可以生效。
 
-As we know, every site should have its own `lang`, `title`, `description`, etc. Thus, VuePress has built-in support for those options.
+我们知道，每一个站点都应该有它的 `lang`, `title` 和 `description` 等属性，因此 VuePress 内置支持了这些属性的配置。
 
 :::tip
-Check out the [Config Reference](../reference/config.md) for a full list of site config.
+前往 [配置参考](../reference/config.md) 查看所有站点配置。
 :::
 
-### Theme Config
+### 主题配置
 
-Theme config will be processed by VuePress theme, so it depends on the theme you are using.
+主题配置将会被 VuePress 主题来处理，所以它取决于你使用的主题是什么。
 
-If you don't specify the `theme` option of VuePress Config, the default theme will be used.
+如果你没有设置 VuePress 配置的 `theme` 配置项，则代表使用的是默认主题。
 
 :::tip
-Check out the [Default Theme > Config Reference](../reference/default-theme/config.md) for theme config of default theme.
+前往 [默认主题 > 配置参考](../reference/default-theme/config.md) 查看默认主题的配置。
 :::

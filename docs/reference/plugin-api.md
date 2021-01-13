@@ -1,17 +1,17 @@
-# Plugin API
+# 插件 API
 
-Plugins should be used before initialization. The basic options will be handled once the plugin is used:
+插件需要在初始化之前使用。基础配置项会在使用插件时立即被处理：
 
 - [name](#name)
 - [multiple](#multiple)
 - [plugins](#plugins)
 
-The following hooks will be processed when initializing app:
+下列 Hooks 会在初始化 App 时处理：
 
 - [extendsMarkdown](#extendsmarkdown)
 - [onInitialized](#oninitialized)
 
-The following hooks will be processed when preparing files:
+下列 Hooks 会在准备文件时处理：
 
 - [extendsPageData](#extendspagedata)
 - [clientAppEnhanceFiles](#clientappenhancefiles)
@@ -19,99 +19,99 @@ The following hooks will be processed when preparing files:
 - [clientAppSetupFiles](#clientappsetupfiles)
 - [onPrepared](#onprepared)
 
-The following hooks will be processed in dev / build:
+下列 Hooks 会在 dev / build 时处理：
 
 - [alias](#alias)
 - [define](#define)
 - [onGenerated](#ongenerated)
 
-## Basic Options
+## 基础配置项
 
 ### name
 
-- Type: `string`
+- 类型： `string`
 
-- Details:
+- 详情：
 
-  Name of the plugin.
+  插件的名称。
 
-  It will be used for identifying plugins to avoid using a same plugin multiple times, so make sure to use a unique plugin name.
+  它会被用来识别插件，以避免多次使用同一个插件，因此应确保你的插件名称是独一无二的。
 
-  It is recommended to use following format:
+  建议使用以下命名格式：
 
-  - Non-scoped: `vuepress-plugin-foo`
+  - 非 Scoped: `vuepress-plugin-foo`
   - Scoped: `@org/vuepress-plugin-foo`
 
-- Also see:
-  - [Plugin API > multiple](#multiple)
+- 参考：
+  - [插件 API > multiple](#multiple)
 
 ### multiple
 
-- Type: `boolean`
+- 类型： `boolean`
 
-- Default: `false`
+- 默认值： `false`
 
-- Details:
+- 详情：
 
-  Declare whether the plugin can be used multiple times.
+  插件是否能够被多次使用。
 
-  If set to `false`, when using plugins with the same name, the one used previously will be replaced by the one used later.
+  如果设置为 `false` ，当有相同名称的插件被使用时，先使用的会被后使用的替换掉。
 
-  If set to `true`, plugins with the same name could be used multiple times and won't be replaced.
+  如果设置为 `true` ，相同名称的插件可以被多次使用且不会被替换。
 
-- Also see:
-  - [Plugin API > name](#name)
+- 参考：
+  - [插件 API > name](#name)
 
 ### plugins
 
-- Type: `PluginConfig[]`
+- 类型： `PluginConfig[]`
 
-- Details:
+- 详情：
 
-  Plugins to use.
+  要使用的插件。
 
-  A plugin can use other plugins via this option.
+  一个插件可以通过该选项来使用其他的插件。
 
-  This option accepts an array, each item of which is a two-element tuple:
+  该配置项接收一个数组，其中的每一个数组项是一个包含两个元素的元组：
 
-  - The first element is the plugin name or the plugin itself. It accepts plugin name, plugin name shorthand, absolute path to plugin, or the plugin object.
-  - The second element is the plugin options. It accepts boolean or object. Set it to `false` to disable the plugin. Set it to `true` to enable the plugin without any options. Use object to enable the plugin with options.
+  - 第一个元素是插件名称或插件本身。它可以接收插件名称、插件简称、插件的绝对路径或插件对象。
+  - 第二个元素是插件选项。它可以接收布尔值或一个对象。设置为 `false` 可以禁用该插件。设置为 `true` 可以启用该插件但不设置任何选项。使用对象可以启用该插件并且传入选项。
 
-  For simplicity, you can use the first element of the tuple that described above as the array item, which equals enabling the plugin without any options.
+  为了简便起见，你可以将上述元组的第一个元素直接作为数组项，它等价于启用该插件但不设置任何选项。
 
-- Example:
+- 示例：
 
   ```js
   module.exports = {
     plugins: [
-      // two-element tuple
+      // 包含两个元素的元组
       ['vuepress-plugin-foo', false],
       ['bar', true],
-      ['/path/to/local/plugin', { /* options */ }],
+      ['/path/to/local/plugin', { /* 选项 */ }],
       [require('vuepress-plugin-baz'), true],
 
-      // only use the first element
-      'foobar', // equals to ['foobar', true]
+      // 只使用第一个元素
+      'foobar', // 等价于 ['foobar', true]
     ],
   }
   ```
 
-- Also see:
-  - [Guide > Plugin](../guide/plugin.md)
+- 参考：
+  - [指南 > 插件](../guide/plugin.md)
 
-## Development Hooks
+## 开发 Hooks
 
 ### alias
 
-- Type: `Record<string, any> | ((app: App) => Record<string, any>)`
+- 类型： `Record<string, any> | ((app: App) => Record<string, any>)`
 
-- Details:
+- 详情：
 
-  Path aliases definition.
+  定义路径别名。
 
-  This hook accepts an object or a function that returns an object.
+  该 Hook 接收一个对象，或者一个返回对象的函数。
 
-- Example:
+- 示例：
 
   ```js
   module.exports = {
@@ -123,17 +123,17 @@ The following hooks will be processed in dev / build:
 
 ### define
 
-- Type: `Record<string, any> | ((app: App) => Record<string, any>)`
+- 类型： `Record<string, any> | ((app: App) => Record<string, any>)`
 
-- Details:
+- 详情：
 
-  Define global constants replacements.
+  定义全局常量。
 
-  This hook accepts an object or a function that returns an object.
+  该 Hook 接收一个对象，或者一个返回对象的函数。
 
-  This can be useful for passing variables to client files. Note that the values will be automatically processed by `JSON.stringify()`.
+  它可以被用于向客户端文件传递变量。注意这里的值都会自动被 `JSON.stringify()` 处理。
 
-- Example:
+- 示例：
 
   ```js
   module.exports = {
@@ -147,17 +147,17 @@ The following hooks will be processed in dev / build:
 
 ### extendsMarkdown
 
-- Type: `(md: Markdown, app: App) => void`
+- 类型： `(md: Markdown, app: App) => void`
 
-- Details:
+- 详情：
 
-  Markdown enhancement.
+  Markdown 增强。
 
-  This hook accepts a function that will receive an instance of `Markdown` powered by [markdown-it](https://github.com/markdown-it/markdown-it) in its arguments.
+  该 Hook 接收一个函数，在参数中会收到一个由 [markdown-it](https://github.com/markdown-it/markdown-it) 提供的 `Markdown` 实例。
 
-  This can be used for using extra markdown-it plugins and implementing customizations.
+  它可以用来添加额外的 markdown-it 插件、应用额外的自定义功能。
 
-- Example:
+- 示例：
 
   ```js
   module.exports = {
@@ -170,15 +170,15 @@ The following hooks will be processed in dev / build:
 
 ### extendsPageData
 
-- Type: `(page: Page, app: App) => Record<string, any> | Promise<Record<string, any>>`
+- 类型： `(page: Page, app: App) => Record<string, any> | Promise<Record<string, any>>`
 
-- Details:
+- 详情：
 
-  Page data extension.
+  页面数据扩展。
 
-  This hook accepts a function that will receive an instance of `Page`. The returned object will be merged into page data, which can be used in client side code.
+  该 Hook 接收一个函数，在参数中会收到一个 `Page` 实例。返回的对象会被合并到页面数据中，可以在客户端代码中使用。
 
-- Example:
+- 示例：
 
   ```js
   module.exports = {
@@ -189,7 +189,7 @@ The following hooks will be processed in dev / build:
   }
   ```
 
-  In client component:
+  在客户端组件中：
 
   ```js
   import { usePageData } from '@vuepress/client'
@@ -202,19 +202,19 @@ The following hooks will be processed in dev / build:
   }
   ```
 
-## Client Files Hooks
+## 客户端文件 Hooks
 
 ### clientAppEnhanceFiles
 
-- Type: `string | string[] | ((app: App) => string | string[] | Promise<string | string[]>)`
+- 类型： `string | string[] | ((app: App) => string | string[] | Promise<string | string[]>)`
 
-- Details:
+- 详情：
 
-  Paths of client app enhancement files.
+  Client App Enhancement 文件路径。
 
-  This hook accepts absolute file paths, or a function that returns the paths.
+  该 Hook 接收文件绝对路径，或者一个返回路径的函数。
 
-- Example:
+- 示例：
 
   ```js
   module.exports = {
@@ -224,15 +224,15 @@ The following hooks will be processed in dev / build:
 
 ### clientAppRootComponentFiles
 
-- Type: `string | string[] | ((app: App) => string | string[] | Promise<string | string[]>)`
+- 类型： `string | string[] | ((app: App) => string | string[] | Promise<string | string[]>)`
 
-- Details:
+- 详情：
 
-  Paths of client app root component files.
+  Client Root Component 文件路径。
 
-  This hook accepts absolute file paths, or a function that returns the paths.
+  该 Hook 接收文件绝对路径，或者一个返回路径的函数。
 
-- Example:
+- 示例：
 
   ```js
   module.exports = {
@@ -242,15 +242,15 @@ The following hooks will be processed in dev / build:
 
 ### clientAppSetupFiles
 
-- Type: `string | string[] | ((app: App) => string | string[] | Promise<string | string[]>)`
+- 类型： `string | string[] | ((app: App) => string | string[] | Promise<string | string[]>)`
 
-- Details:
+- 详情：
 
-  Paths of client app setup files.
+  Client App Setup 文件路径。
 
-  This hook accepts absolute file paths, or a function that returns the paths.
+  该 Hook 接收文件绝对路径，或者一个返回路径的函数。
 
-- Example:
+- 示例：
 
   ```js
   module.exports = {
@@ -258,28 +258,28 @@ The following hooks will be processed in dev / build:
   }
   ```
 
-## Lifecycle Hooks
+## 生命周期 Hooks
 
 ### onInitialized
 
-- Type: `(app: App) => void | Promise<void>`
+- 类型： `(app: App) => void | Promise<void>`
 
-- Details:
+- 详情：
 
-  This hook will be invoked once VuePress app has been initialized.
+  该 Hook 会在 VuePress App 初始化后被立即调用。
 
 ### onPrepared
 
-- Type: `(app: App) => void | Promise<void>`
+- 类型： `(app: App) => void | Promise<void>`
 
-- Details:
+- 详情：
 
-  This hook will be invoked once VuePress app has finished preparation.
+  该 Hook 会在 VuePress App 完成文件准备后被立即调用。
 
 ### onGenerated
 
-- Type: `(app: App) => void | Promise<void>`
+- 类型： `(app: App) => void | Promise<void>`
 
-- Details:
+- 详情：
 
-  This hook will be invoked once VuePress app has generated static files.
+  该 Hook 会在 VuePress App 完成静态文件生成后被立即调用。
