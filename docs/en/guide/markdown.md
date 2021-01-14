@@ -47,8 +47,8 @@ Take our documentation source files as an example:
 **Raw Markdown**
 
 ```md
-[Home](/README.md)  
-[Guide](/guide/)  
+[Home](/en/README.md)  
+[Guide](/en/guide/)  
 [Getting Started](./getting-started.md)  
 [markdown.links](../reference/config.md#links)  
 [GitHub](https://github.com)  
@@ -57,17 +57,17 @@ Take our documentation source files as an example:
 **Converted to**
 
 ```vue
-<RouterLink to="/">Home</RouterLink>
-<RouterLink to="/guide/">Guide</RouterLink>
-<RouterLink to="/guide/getting-started.html">Getting Started</RouterLink>
-<RouterLink to="/reference/config.html#links">markdown.links</RouterLink>
+<RouterLink to="/en/">Home</RouterLink>
+<RouterLink to="/en/guide/">Guide</RouterLink>
+<RouterLink to="/en/guide/getting-started.html">Getting Started</RouterLink>
+<RouterLink to="/en/reference/config.html#links">markdown.links</RouterLink>
 <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub<OutboundLink/></a>
 ```
 
 **Rendered as**
 
-[Home](/README.md)  
-[Guide](/guide/)  
+[Home](/en/README.md)  
+[Guide](/en/guide/)  
 [Getting Started](./getting-started.md)  
 [markdown.links](../reference/config.md#links)  
 [GitHub](https://github.com)  

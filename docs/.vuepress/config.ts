@@ -97,8 +97,11 @@ const config: UserConfig<DefaultThemeOptions> = {
         // appId: '',
         indexName: '',
         locales: {
-          '/zh/': {
+          '/': {
             placeholder: '搜索文档',
+          },
+          '/en/': {
+            placeholder: 'Search docs',
           },
         },
       },
@@ -108,9 +111,13 @@ const config: UserConfig<DefaultThemeOptions> = {
       '@vuepress/plugin-pwa-popup',
       {
         locales: {
-          '/zh/': {
+          '/': {
             message: '发现新内容可用',
             buttonText: '刷新',
+          },
+          '/en/': {
+            message: 'Found new content available',
+            buttonText: 'Refresh',
           },
         },
       },

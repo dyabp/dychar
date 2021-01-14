@@ -3,7 +3,7 @@ home: true
 title: 首页
 heroImage: /hero.png
 actionText: 快速上手 →
-actionLink: /zh/guide/getting-started.html
+actionLink: /guide/getting-started.html
 features:
   - title: 简洁至上
     details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。

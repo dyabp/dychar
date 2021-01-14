@@ -48,8 +48,8 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 **原始 Markdown**
 
 ```md
-[首页](/zh/README.md)  
-[指南](/zh/guide/)  
+[首页](/README.md)  
+[指南](/guide/)  
 [快速上手](./getting-started.md)  
 [markdown.links](../reference/config.md#links)  
 [GitHub](https://github.com)  
@@ -58,17 +58,17 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 **转换为**
 
 ```vue
-<RouterLink to="/zh/">首页</RouterLink>
-<RouterLink to="/zh/guide/">指南</RouterLink>
-<RouterLink to="/zh/guide/getting-started.html">快速上手</RouterLink>
-<RouterLink to="/zh/reference/config.html#links">markdown.links</RouterLink>
+<RouterLink to="/">首页</RouterLink>
+<RouterLink to="/guide/">指南</RouterLink>
+<RouterLink to="/guide/getting-started.html">快速上手</RouterLink>
+<RouterLink to="/reference/config.html#links">markdown.links</RouterLink>
 <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub<OutboundLink/></a>
 ```
 
 **渲染为**
 
-[首页](/zh/README.md)  
-[指南](/zh/guide/)  
+[首页](/README.md)  
+[指南](/guide/)  
 [快速上手](./getting-started.md)  
 [markdown.links](../reference/config.md#links)  
 [GitHub](https://github.com)  
