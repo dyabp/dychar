@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
     <!-- abo https://www.nuget.org/packages/Volo.Abp -->
-    <AbpPackageVersion>4.1.0</AbpPackageVersion>
+    <AbpPackageVersion>4.1.1</AbpPackageVersion>
 
   </PropertyGroup>
 </Project>
