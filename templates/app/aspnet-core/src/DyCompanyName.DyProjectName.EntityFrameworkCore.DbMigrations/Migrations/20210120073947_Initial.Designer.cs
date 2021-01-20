@@ -11,8 +11,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace DyCompanyName.DyProjectName.Migrations
 {
     [DbContext(typeof(DyProjectNameMigrationsDbContext))]
-    [Migration("20201228032035_AddedLanguageManagementModule")]
-    partial class AddedLanguageManagementModule
+    [Migration("20210120073947_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace DyCompanyName.DyProjectName.Migrations
                 .UseIdentityColumns()
                 .HasAnnotation("_Abp_DatabaseProvider", EfCoreDatabaseProvider.SqlServer)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.1");
+                .HasAnnotation("ProductVersion", "5.0.2");
 
             modelBuilder.Entity("Dyabp.LanguageManagement.Language", b =>
                 {
@@ -89,6 +89,10 @@ namespace DyCompanyName.DyProjectName.Migrations
                     b.Property<Guid?>("LastModifierId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("LastModifierId");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
 
                     b.Property<string>("UiCultureName")
                         .IsRequired()
