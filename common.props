@@ -3,8 +3,8 @@
     <LangVersion>latest</LangVersion>
     <Version>1.0.0</Version>
     <NoWarn>$(NoWarn);CS1591;CS0436</NoWarn>
-    <PackageIconUrl>http://gerryge.com/images/dyabp.png</PackageIconUrl>
-    <PackageProjectUrl>http://gerryge.com/</PackageProjectUrl>
+    <PackageIconUrl>https://dyabp.github.io/hero.png</PackageIconUrl>
+    <PackageProjectUrl>https://dyabp.github.io/</PackageProjectUrl>
     <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/dyabp</RepositoryUrl>

@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <!-- abo https://www.nuget.org/packages/Volo.Abp -->
+    <!-- abp https://www.nuget.org/packages/Volo.Abp -->
     <AbpPackageVersion>4.1.2</AbpPackageVersion>
 
   </PropertyGroup>

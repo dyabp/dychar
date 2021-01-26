@@ -14,12 +14,12 @@ const config: UserConfig<DefaultThemeOptions> = {
     '/': {   
       lang: 'zh-CN',
       title: 'DyAbp',
-      description: 'Vue 驱动的静态网站生成器',
+      description: '助力您的Abp开发',
     },
     '/en/': {
       lang: 'en-US',
       title: 'DyAbp',
-      description: 'Vue-powered Static Site Generator',
+      description: 'Empowering Your Abp Development',
     },
   },
 
