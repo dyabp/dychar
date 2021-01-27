@@ -1,17 +1,17 @@
+import * as chokidar from 'chokidar'
 import type { UserConfig } from '@vuepress/cli'
 import type { DefaultThemeOptions } from '@vuepress/theme-default'
+import { chalk, logger } from '@vuepress/utils'
 import { navbar, sidebar } from './configs'
 
 const config: UserConfig<DefaultThemeOptions> = {
   base: '/',
 
-  evergreen: process.env.NODE_ENV !== 'production',
-
   head: [['link', { rel: 'icon', href: `/logo.png` }]],
 
   // site-level locales config
   locales: {
-    '/': {   
+    '/': {
       lang: 'zh-CN',
       title: 'DyAbp',
       description: '助力您的Abp开发',
@@ -28,7 +28,7 @@ const config: UserConfig<DefaultThemeOptions> = {
 
     repo: 'dyabp/dyabp',
 
-    docsBranch: 'main',
+    //docsBranch: 'main',
     docsDir: 'docs',
 
     // theme-level locales config
@@ -86,26 +86,32 @@ const config: UserConfig<DefaultThemeOptions> = {
         openInNewWindow: '在新窗口打开',
       },
     },
+
+    themePlugins: {
+      // only enable git plugin in production mode
+      git: process.env.NODE_ENV === 'production',
+    },
   },
 
   plugins: [
-    [
-      '@vuepress/plugin-docsearch',
-      {
-        // TODO: create algolia index for vuepress-next
-        apiKey: '',
-        // appId: '',
-        indexName: '',
-        locales: {
-          '/': {
-            placeholder: '搜索文档',
-          },
-          '/en/': {
-            placeholder: 'Search docs',
-          },
-        },
-      },
-    ],
+    // [
+    //   '@vuepress/plugin-docsearch',
+    //   {
+    //     apiKey: '311baf7f522b70d9d8490d1dd6285b1d',
+    //     indexName: 'dyabp',
+    //     searchParameters: {
+    //       facetFilters: ['tags:v2'],
+    //     },
+    //     locales: {
+    //       '/en/': {
+    //         placeholder: '搜索文档',
+    //       },
+    //       '/': {
+    //         placeholder: 'Search docs',
+    //       },
+    //     },
+    //   },
+    // ],
     ['@vuepress/plugin-pwa'],
     [
       '@vuepress/plugin-pwa-popup',
@@ -116,13 +122,27 @@ const config: UserConfig<DefaultThemeOptions> = {
             buttonText: '刷新',
           },
           '/en/': {
-            message: 'Found new content available',
+            message: 'New content is available.',
             buttonText: 'Refresh',
           },
         },
       },
     ],
   ],
+
+  evergreen: process.env.NODE_ENV !== 'production',
+
+  onWatched: (_, restart) => {
+    const watcher = chokidar.watch('configs/**/*.ts', {
+      cwd: __dirname,
+      ignoreInitial: true,
+    })
+    watcher.on('change', async (file) => {
+      logger.info(`file ${chalk.magenta(file)} is modified`)
+      await watcher.close()
+      await restart()
+    })
+  },
 }
 
 export = config
