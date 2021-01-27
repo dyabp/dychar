@@ -112,22 +112,22 @@ const config: UserConfig<DefaultThemeOptions> = {
     //     },
     //   },
     // ],
-    ['@vuepress/plugin-pwa'],
-    [
-      '@vuepress/plugin-pwa-popup',
-      {
-        locales: {
-          '/': {
-            message: '发现新内容可用',
-            buttonText: '刷新',
-          },
-          '/en/': {
-            message: 'New content is available.',
-            buttonText: 'Refresh',
-          },
-        },
-      },
-    ],
+    // ['@vuepress/plugin-pwa'],
+    // [
+    //   '@vuepress/plugin-pwa-popup',
+    //   {
+    //     locales: {
+    //       '/': {
+    //         message: '发现新内容可用',
+    //         buttonText: '刷新',
+    //       },
+    //       '/en/': {
+    //         message: 'New content is available.',
+    //         buttonText: 'Refresh',
+    //       },
+    //     },
+    //   },
+    // ],
   ],
 
   evergreen: process.env.NODE_ENV !== 'production',
