@@ -37,6 +37,8 @@ using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
 using Dyabp.LanguageManagement;
+using System.Linq;
+using Microsoft.AspNetCore.Cors;
 
 namespace DyCompanyName.DyProjectName.Web
 {
@@ -56,6 +58,8 @@ namespace DyCompanyName.DyProjectName.Web
         )]
     public class DyProjectNameWebModule : AbpModule
     {
+        private const string DefaultCorsPolicyName = "Default";
+
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.PreConfigure<AbpMvcDataAnnotationsLocalizationOptions>(options =>
@@ -81,9 +85,9 @@ namespace DyCompanyName.DyProjectName.Web
             ConfigureAuthentication(context, configuration);
             ConfigureAutoMapper();
             ConfigureVirtualFileSystem(hostingEnvironment);
-            //ConfigureLocalizationServices();
             ConfigureNavigationServices();
             ConfigureAutoApiControllers();
+            ConfigureCors(context, configuration);
             ConfigureSwaggerServices(context.Services);
         }
 
@@ -190,6 +194,28 @@ namespace DyCompanyName.DyProjectName.Web
             );
         }
 
+        private void ConfigureCors(ServiceConfigurationContext context, IConfiguration configuration)
+        {
+            context.Services.AddCors(options =>
+            {
+                options.AddPolicy(DefaultCorsPolicyName, builder =>
+                {
+                    builder
+                        .WithOrigins(
+                            configuration["App:CorsOrigins"]
+                                .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                                .Select(o => o.RemovePostFix("/"))
+                                .ToArray()
+                        )
+                        .WithAbpExposedHeaders()
+                        .SetIsOriginAllowedToAllowWildcardSubdomains()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
+                });
+            });
+        }
+
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
             var app = context.GetApplicationBuilder();
@@ -210,6 +236,8 @@ namespace DyCompanyName.DyProjectName.Web
             app.UseCorrelationId();
             app.UseVirtualFiles();
             app.UseRouting();
+            app.UseCors(DefaultCorsPolicyName);
+
             app.UseAuthentication();
             app.UseJwtTokenMiddleware();
 
