@@ -23,4 +23,4 @@ footer: MIT Licensed | Copyright © 2019-present DyAbp
 
 请访问 [GitHub](https://github.com/dyabp/dyabp) 或加入讨论群：
 
-<img src="https://dyabp.github.io/qq.png" width="260" />
+<img src="https://dyabp.github.io/qqgroup.png" width="260" />
