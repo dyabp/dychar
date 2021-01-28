@@ -45,7 +45,7 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
           repo: dyabp/dyabp.github.io
-          target_branch: main
+          target_branch: dev
           build_dir: docs/.vuepress/dist
         env:
           GH_PAT: ${{ secrets.GH_PAGES_TOKEN }}
