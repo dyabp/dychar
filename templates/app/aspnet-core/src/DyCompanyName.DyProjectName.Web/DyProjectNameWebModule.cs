@@ -89,6 +89,7 @@ namespace DyCompanyName.DyProjectName.Web
             ConfigureAutoApiControllers();
             ConfigureCors(context, configuration);
             ConfigureSwaggerServices(context.Services);
+            context.Services.AddSameSiteCookiePolicy(); // cookie policy to deal with temporary browser incompatibilities
         }
 
         private void ConfigureUrls(IConfiguration configuration)
@@ -232,6 +233,8 @@ namespace DyCompanyName.DyProjectName.Web
             {
                 app.UseErrorPage();
             }
+
+            app.UseCookiePolicy(); // added this, Before UseAuthentication or anything else that writes cookies.
 
             app.UseCorrelationId();
             app.UseVirtualFiles();
