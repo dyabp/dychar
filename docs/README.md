@@ -19,42 +19,9 @@ features:
 footer: MIT Licensed | Copyright © 2019-present DyAbp
 ---
 
-### 像数 1, 2, 3 一样容易
+### 反馈与共建
 
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
+请访问 [GitHub](https://github.com/dyabp/dyabp) 或加入讨论群：
 
-```bash
-# 在你的项目中安装
-yarn add -D vuepress@next
-
-# 新建一个 markdown 文件
-echo '# Hello VuePress' > README.md
-
-# 开始写作
-yarn vuepress dev
-
-# 构建静态文件
-yarn vuepress build
-```
-
-  </CodeGroupItem>
-
-  <CodeGroupItem title="NPM">
-
-```bash
-# 在你的项目中安装
-npm install -D vuepress@next
-
-# 新建一个 markdown 文件
-echo '# Hello VuePress' > README.md
-
-# 开始写作
-npx vuepress dev
-
-# 构建静态文件
-npx vuepress build
-```
-
-  </CodeGroupItem>
-</CodeGroup>
+<img src="https://gw.alipayobjects.com/zos/bmw-prod/877c66b3-ec81-48ca-ad7f-f3a6f7e19b42/kiprxtw0_w1004_h1346.png" width="260" />
+<img src="https://gw.alipayobjects.com/zos/bmw-prod/c18bc2a5-719a-48ca-b225-c79ef88bfb43/k7m10ymd_w1004_h1346.jpeg" width="260"/>

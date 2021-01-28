@@ -19,42 +19,8 @@ features:
 footer: MIT Licensed | Copyright © 2019-present DyAbp
 ---
 
-### As Easy as 1, 2, 3
+### Feedback
 
-<CodeGroup>
-  <CodeGroupItem title="YARN" active>
+Please visit [GitHub](https://github.com/dyabp/dyabp) or join the discuss group
 
-```bash
-# install in your project
-yarn add -D vuepress@next
-
-# create a markdown file
-echo '# Hello VuePress' > README.md
-
-# start writing
-yarn vuepress dev
-
-# build to static files
-yarn vuepress build
-```
-
-  </CodeGroupItem>
-
-  <CodeGroupItem title="NPM">
-  
-```bash
-# install in your project
-npm install -D vuepress@next
-
-# create a markdown file
-echo '# Hello VuePress' > README.md
-
-# start writing
-npx vuepress dev
-
-# build to static files
-npx vuepress build
-```
-
-  </CodeGroupItem>
-</CodeGroup>
+<img src="https://dyabp.github.io/dyabp-qq.png" width="260" />
