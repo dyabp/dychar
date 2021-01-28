@@ -5,13 +5,13 @@ heroImage: /hero.png
 actionText: Get Started →
 actionLink: /en/guide/getting-started.html
 features:
-  - title: Simplicity First
-    details: Minimal setup with markdown-centered project structure helps you focus on writing.
-  - title: Vue-Powered
-    details: Enjoy the dev experience of Vue, use Vue components in markdown, and develop custom themes with Vue.
-  - title: Performant
-    details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-footer: MIT Licensed | Copyright © 2018-present VuePress
+  - title: Out of the Box
+    details: Just install the corresponding packages, you can access the corresponding module functions, saving you a lot of development times.
+  - title: Extensible
+    details: All modules follow ABP best practices and support the object extension system to meet the hierarchical requirements of functions and vertical domains.
+  - title: Future Ready
+    details: Dyabp's community is also exploring new technologies.
+footer: MIT Licensed | Copyright © 2019-present DyAbp
 ---
 
 ### As Easy as 1, 2, 3

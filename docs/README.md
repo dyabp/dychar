@@ -5,13 +5,13 @@ heroImage: /hero.png
 actionText: 快速上手 →
 actionLink: /guide/getting-started.html
 features:
-  - title: 简洁至上
-    details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-  - title: Vue 驱动
-    details: 享受 Vue 的开发体验，可以在 Markdown 中使用 Vue 组件，又可以使用 Vue 来开发自定义主题。
-  - title: 高性能
-    details: VuePress 会为每个页面预渲染生成静态的 HTML，同时，每个页面被加载的时候，将作为 SPA 运行。
-footer: MIT Licensed | Copyright © 2018-present VuePress
+  - title: 开箱即用
+    details: 只需安装对应包，即可接入相应模块功能，为您节省大量开发时间。
+  - title: 可扩展
+    details: 模块都遵循ABP最佳实践，支持对象扩展系统，以满足功能和垂直域的分层需求。
+  - title: 面向未来
+    details: 在满足需求的同时，我们也不会停止对新技术的探索。
+footer: MIT Licensed | Copyright © 2019-present DyAbp
 ---
 
 ### 像数 1, 2, 3 一样容易
