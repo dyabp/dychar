@@ -2,8 +2,13 @@
 home: true
 title: 首页
 heroImage: /hero.png
-actionText: 快速上手 →
-actionLink: /guide/getting-started.html
+actions:
+  - text: 快速上手
+    link: /guide/getting-started.html
+    type: primary
+  - text: 项目简介
+    link: /guide/
+    type: secondary
 features:
   - title: 开箱即用
     details: 只需安装对应包，即可接入相应模块功能，为您节省大量开发时间。

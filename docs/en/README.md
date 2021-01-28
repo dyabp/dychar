@@ -2,8 +2,13 @@
 home: true
 title: Home
 heroImage: /hero.png
-actionText: Get Started →
-actionLink: /en/guide/getting-started.html
+actions:
+  - text: Get Started
+    link: /en/guide/getting-started.html
+    type: primary
+  - text: Introduction
+    link: /en/guide/
+    type: secondary
 features:
   - title: Out of the Box
     details: Just install the corresponding packages, you can access the corresponding module functions, saving you a lot of development times.
