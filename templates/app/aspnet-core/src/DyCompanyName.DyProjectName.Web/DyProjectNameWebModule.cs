@@ -249,6 +249,7 @@ namespace DyCompanyName.DyProjectName.Web
                 app.UseMultiTenancy();
             }
 
+            app.UseUnitOfWork();
             app.UseIdentityServer();
             app.UseAuthorization();
             app.UseSwagger();

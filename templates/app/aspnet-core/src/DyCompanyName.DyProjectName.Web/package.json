@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "name": "dy-app",
+  "name": "dyapp",
   "private": true,
   "dependencies": {
-    "@abp/aspnetcore.mvc.ui.theme.basic": "~4.1.2",
-    "@abp/flag-icon-css": "~4.1.2"
+    "@abp/aspnetcore.mvc.ui.theme.basic": "^4.2.0",
+    "@abp/flag-icon-css": "^4.2.0"
   }
 }

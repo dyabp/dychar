@@ -27,9 +27,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Autofac" Version="4.1.2" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="4.2.0" />
     <ProjectReference Include="..\DyCompanyName.DyProjectName.Application.Contracts\DyCompanyName.DyProjectName.Application.Contracts.csproj" />
     <ProjectReference Include="..\DyCompanyName.DyProjectName.EntityFrameworkCore.DbMigrations\DyCompanyName.DyProjectName.EntityFrameworkCore.DbMigrations.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
   </ItemGroup>
 
 </Project>
