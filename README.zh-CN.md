@@ -4,25 +4,25 @@
 [![GitHub stars](https://img.shields.io/github/stars/dyabp/dychar.svg?style=social)](https://github.com/dyabp/dychar)
 <!-- [![NuGet Download](https://img.shields.io/nuget/dt/Dyabp.LanguageManagement.Domain.Shared.svg?style=flat-square)](https://www.nuget.org/packages/Dyabp.LanguageManagement.Domain.Shared/) -->
 
-English | [简体中文](./README.zh-CN.md)
+[English](./README.md) | 简体中文
 
-### 🌟 Introduce
-This responsitory used to demo the dyabp modules
+### 🌟 简介
+This responsitory used to demo the dyabp modules, you can visit via [dychar online demo](https://dychar.com)
 
-### 🚀 How to Use:
+### 🚀 如何使用:
 ```git
 git clone https://github.com/dyabp/dyabp.git --recurse-submodules
 ```
-> If you already cloned the project and forgot --recurse-submodules, you can combine the `git submodule init` and `git submodule update` steps by running `git submodule update --init`. To also initialize, fetch and checkout any nested submodules, you can use the foolproof `git submodule update --init --recursive`.
+> 如果你已经克隆了项目但忘记了 --recurse-submodules，那么可以运行 `git submodule update --init` 将 `git submodule init` 和 `git submodule update` 合并成一步。如果还要初始化、抓取并检出任何嵌套的子模块， 请使用简明的 `git submodule update --init --recursive`。
 > ```git
 > git submodule update --init
 > ```
-> Details please refer to [Git Tools - Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+> 关于git submodules请参考 [Git Tools - Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
-### 🤖 How to update submodules:
+### 🤖 如何更新子模块:
 ```git
 git submodule foreach 'git pull origin dev'
 ```
 
-### ✨ Online preview
+### ✨ 在线预览
 [dychar online demo](https://dychar.com)
