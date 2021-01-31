@@ -11,6 +11,11 @@ This responsitory used to demo the dyabp modules, you can visit via [dychar onli
 ```git
 git clone https://github.com/dyabp/dyabp.git --recurse-submodules
 ```
+> If you already cloned the project and forgot --recurse-submodules, you can combine the `git submodule init` and `git submodule update` steps by running `git submodule update --init`. To also initialize, fetch and checkout any nested submodules, you can use the foolproof `git submodule update --init --recursive`.
+> ```git
+> git submodule update --init
+> ```
+> Details please refer to [Git Tools - Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 ### How to update submodules:
 ```git
