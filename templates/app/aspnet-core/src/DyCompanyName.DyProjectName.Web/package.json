@@ -3,7 +3,7 @@
   "name": "dyapp",
   "private": true,
   "dependencies": {
-    "@abp/aspnetcore.mvc.ui.theme.basic": "^4.2.0",
-    "@abp/flag-icon-css": "^4.2.0"
+    "@abp/aspnetcore.mvc.ui.theme.basic": "~4.2.1",
+    "@abp/flag-icon-css": "~4.2.1"
   }
 }
