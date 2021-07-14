@@ -6,14 +6,14 @@
 @inject IHtmlLocalizer<DyProjectNameResource> L
 @inject ICurrentUser CurrentUser
 @section styles {
-    <abp-style-bundle>
-        <abp-style src="/Pages/Index.css" />
-    </abp-style-bundle>
+<abp-style-bundle>
+    <abp-style src="/Pages/Index.css" />
+</abp-style-bundle>
 }
 @section scripts {
-    <abp-script-bundle>
-        <abp-script src="/Pages/Index.js" />
-    </abp-script-bundle>
+<abp-script-bundle>
+    <abp-script src="/Pages/Index.js" />
+</abp-script-bundle>
 }
 <div class="container">
     <div class="p-5 text-center">
@@ -26,7 +26,7 @@
 
         @if (!CurrentUser.IsAuthenticated)
         {
-            <a abp-button="Primary" href="~/Account/Login" ><i class="fa fa-sign-in"></i> @L["Login"]</a>
+            <a abp-button="Primary" href="~/Account/Login"><i class="fa fa-sign-in"></i> @L["Login"]</a>
         }
 
     </div>
@@ -162,6 +162,10 @@
             <a href="https://twitter.com/abpframework" target="_blank" class="mx-2"><i class="fa fa-twitter"></i><span class="text-secondary"> Abp Framework</span></a>
             <a href="https://twitter.com/abpcommercial" target="_blank" class="mx-2"><i class="fa fa-twitter"></i><span class="text-secondary"> Abp Commercial</span></a>
             <a href="https://github.com/abpframework/abp" target="_blank" class="mx-2"><i class="fa fa-github"></i><span class="text-secondary"> abpframework</span></a>
+        </p>
+        <p class="align-middle">
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32059002002322" target="_blank" class="mx-2"><img src="/imgs/beian.png" /><span class="text-secondary"> 苏公网安备 32059002002322号</span></a>
+            <a href="https://beian.miit.gov.cn/" target="_blank" class="mx-2"><i class="fas fa-shield-alt"></i><span class="text-secondary"> 苏ICP备18063100号-1</span></a>
         </p>
     </div>
 </div>
